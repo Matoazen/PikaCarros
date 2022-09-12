@@ -7,7 +7,7 @@ class Player {
     this.rank = 0;
     this.pontos = 0;
     this.gasolina = 185;
-    this.vida = 185;
+    this.life = 185;
   }
   verificarJogadores() {
     database.ref("playerCount").on("value", (dados)=>{
