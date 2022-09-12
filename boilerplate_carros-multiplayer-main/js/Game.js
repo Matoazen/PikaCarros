@@ -178,11 +178,21 @@ class Game {
       player.atualizarInfoJogador()
     })
   }
-  deteccaoDeObstaculos(Indicz){
+  deteccaoDeObstaculos(Indicz){ 
+     //paramos aqui :)
     if(carmatrix[Indicz -1].collide(obstacles)){
-      //paramos aqui :)
-    }
-  }
+      if (this.leftKeyActive) { 
+        player.positionX += 100;
+      } else {
+        player.positionX -= 100; 
+      } 
+      if (player.life > 0) {
+       player.life -= 185 / 4; 
+      } 
+      player.atualizarInfoJogador(); 
+    } 
+ }
+
   mostrarRank(){
     swal({
       title: `Incrível!${"\n"}Rank${"\n"}${player.rank}`,
